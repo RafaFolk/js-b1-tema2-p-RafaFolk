@@ -18,9 +18,21 @@
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+//definición de la clase
+class Triangle {
+  constructor(base, height) {
+    this.base = base;
+    this.height = height;
+   }
+}
 
+//creando objetos
+const t1=new Triangle(3,3);
+const t2=new Triangle(4,2);
 
-
+//viendolos
+console.log(t1);
+console.log(t2);
 
 /**
  * TEST

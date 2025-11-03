@@ -26,8 +26,25 @@
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+//definición de la clase
+class Triangle {
+  constructor(base, height) {
+    this.base = base;
+    this.height = height;
+   }
+}
 
+//creando objetos
+const myTriangle1=new Triangle(10,5);
+const myTriangle2=new Triangle(15,7);
 
+//cambiando propiedades, orden correcto para no sobreescribir
+myTriangle2.base=myTriangle1.height;
+myTriangle1.height=myTriangle2.height;
+
+//calculando areas
+const areaMyTriangle1=(myTriangle1.height*myTriangle1.base)/2;
+const areaMyTriangle2=(myTriangle2.height*myTriangle2.base)/2;
 
 
 
