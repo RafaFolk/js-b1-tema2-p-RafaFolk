@@ -33,7 +33,40 @@ class Car {
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+class Car {
+  constructor(brand, model, displacement, horsePower, year) {
+    this.brand = brand;
+    this.model = model;
+    this.displacement = displacement;
+    this.horsePower = horsePower;
+    this.year = year;
+  }
 
+  set carAntiguaty(years){
+    this.year=(2023-years);
+  }
+
+  get getCarDescription(){
+    //en el enunciado no esta explicado lo del "cc", pero no pasa los test 
+    //si no se añade
+    return `${this.brand} ${this.model} ${this. displacement}cc`;
+  }
+}
+
+const myCar1=new Car("Ford","Mustang Boss 429",7000,375,1969);
+const myCar2=new Car("BMW","520d",1980,136,2002);
+const myCar3=new Car("Mercedes-Benz","280 SLC",2746,136,1979);
+
+//myCar1.carAntiguaty(50);  Me ha podido la constumbre de JAVA..., claramente se pone en
+//                          los manuales que, en JS, getters y setters son propiedades y no metodos
+myCar1.carAntiguaty=50;
+
+console.log(myCar1);
+
+//console.log(myCar2.getCarDescription()); lo mismo de antes
+console.log(myCar2.getCarDescription);
+
+//So far, so good ;
 
 
 

@@ -40,8 +40,39 @@
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
 
+//definición de la clase
+class Triangle {
+  constructor(base, height, rightTriangle) {
+    this.base = base;
+    this.height = height;
+    this.rightTriangle = rightTriangle;
+   }
 
+   //calculo del area
+   get areaTriangle(){
+    return (this.base*this.height)/2
+   }
 
+   //calculo de la hipotenusa (solo en triangulos rectangulos)
+   get rightHypotenuse(){
+    return this.rightTriangle?(this.base**2+this.height**2)**0.5:undefined;
+   }
+   
+   //calculo del perimetro (solo en triangulos rectangulos)
+   get rightPerimeter(){
+    return this.rightTriangle?this.base+this.height+(this.base**2+this.height**2)**0.5:undefined;
+   }
+}
+
+//creando objetos (para pruebas)
+const t1=new Triangle(3,3, true);
+const t2=new Triangle(4,2, false);
+
+//viendolos (para pruebas)
+console.log(t1.rightHypotenuse);
+console.log(t2.rightHypotenuse);
+console.log(t1.rightPerimeter);
+console.log(t2.rightPerimeter);
 
 /**
  * TEST
