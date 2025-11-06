@@ -39,7 +39,17 @@ class Planet {
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
-
+//El parse necesita que los datos lleguen entre '...', 
+// alternativamente `...` permite hacer multilínea (más human friendly)
+const myJSON=`[{"name":"Mercury","distanceToSun":58344000,"hasRings":false,"diameter":4878},
+               {"name":"Venus","distanceToSun":107712000,"hasRings":false,"diameter":12100},
+			   {"name":"Earth","distanceToSun":149600000,"hasRings":false,"diameter":12756},
+			   {"name":"Mars","distanceToSun":227392000,"hasRings":false,"diameter":6787},
+			   {"name":"Jupiter","distanceToSun":777920000,"hasRings":true,"diameter":142984},
+			   {"name":"Saturn","distanceToSun":1427184000,"hasRings":true,"diameter":120536}]`;
+const impPlanet=JSON.parse(myJSON);
+const planetsBTE= Planet.biggerThanEarth(impPlanet);
+console.log(planetsBTE);
 
 
 /**

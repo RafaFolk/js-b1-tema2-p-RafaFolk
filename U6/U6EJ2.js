@@ -21,12 +21,15 @@
 	- Passar aquest nou Array a un text pla JSON en una nova constant anomenada newCarsJSON.
 */
 
-const myJSON= '[{"brand":"Ford","model":"Mustang Boss 429","displacement":7000,"horsePower":375,"year":1969},{"brand":"BMW","model":"520d","displacement":1980,"horsePower":136,"year":2002},{"brand":"Mercedes-Benz","model":"280 SLC","displacement":2746,"horsePower":136,"year":1979}]';
+const myJSON= `[{"brand":"Ford","model":"Mustang Boss 429","displacement":7000,"horsePower":375,"year":1969},
+                {"brand":"BMW","model":"520d","displacement":1980,"horsePower":136,"year":2002},
+                {"brand":"Mercedes-Benz","model":"280 SLC","displacement":2746,"horsePower":136,"year":1979}]`;
 
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
-
-
+const myCars=JSON.parse(myJSON);
+const lessThan25=myCars.filter(car=>2025-car.year<25);
+const newCarsJSON=JSON.stringify(lessThan25);
 
 /**
  * TEST
