@@ -39,10 +39,61 @@
 */
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+//Definición de clase
+class Triangle{
+	constructor(base, height, rightTriangle){
+		this.base=base;
+		this.height=height;
+		this.rightTriangle=rightTriangle;
+	}
+
+	//getters
+	get areaTriangle(){
+		return this.base*this.height/2;
+	}
+
+	get rightHypotenuse(){
+		return this.rightTriangle?(this.base**2+this.height**2)**0.5:undefined;
+	}
+
+	get rightPerimeter(){
+		return this.rightTriangle?this.base+this.height+this.rightHypotenuse:undefined;
+	}
+
+	//metodos de clase
+	static rightTriangleUnion(tri1,tri2){
+		return tri1.rightPerimeter+tri2.rightPerimeter+Math.abs(tri1.height-tri2.height);
+	}
+
+	static areaPoligon(triArray){
+		let result=0;
+		//supongo que habrá el equivalente al sum de python... mientras a for puro y duro
+		for (let i=0;i<triArray.length;i++){
+			result+=triArray[i].areaTriangle;
+		}
+		return result;
+	}
+
+	//metodos de instancia
+	isEquilateral(){
+		return this.height==this.base*Math.sqrt(3)/2?true:false;
+	}
+}
 
 
-
-
+//creación de los objetos y llamadas a los métodos para cumplir con el enunciado y tareas de testing
+const t1=new Triangle(3,3,true);
+const t2=new Triangle(4,4,true);
+const t3=new Triangle(5,5,true);
+const t4=new Triangle(10, 10*Math.sqrt(3)/2,false);
+console.log(t1.areaTriangle);
+console.log(t1.rightHypotenuse);
+console.log(t1.rightPerimeter);
+console.log(Triangle.rightTriangleUnion(t1,t2));
+let myTriArray=[t1,t2,t3];
+console.log(Triangle.areaPoligon(myTriArray))
+console.log(t1.isEquilateral());  //NO equi
+console.log(t4.isEquilateral());  //SI equi	
 
 /**
  * TEST

@@ -35,7 +35,47 @@
 
 
 
+class Car {
+  constructor(brand, model, displacement, horsePower, year) {
+    this.brand = brand;
+    this.model = model;
+    this.displacement = displacement;
+    this.horsePower = horsePower;
+    this.year = year;
+  }
 
+  //método de instancia
+  cv2kw(){
+	return this.horsePower*0.736;
+  }
+
+  //métodos de clase
+  static compareAntiguaty(Car1,Car2){
+	return Car1.year<Car2.year?Car1:Car2;  //no contempla (ni enunciado) caso de antiguedades iguales
+  }
+
+  static maxDisplacement(cars){
+	let iMax=0;                            //variable que tendra la posicion en el array del coche con mas cc  
+	let maxDisp=cars[0];                   //variable para controlar la maxima cilindrada
+	for (let i=1; i<cars.length;i++){       //empezamos en 1 ya que hemos guardado el primero en la declaracion anterior
+		if (cars[i]>maxDisp){
+			maxDisp=cars[i];                //actualizamos maxCC e i si necesario
+			iMax=i;
+		}  
+	}    
+  	return cars[iMax];            //accedemos al coche a traves de su posicion en el array   
+  }
+
+}
+
+//creación de objetos y llamadas a los metodos
+const myCar1=new Car("Ford","Mustang Boss 429",7000,375,1969);
+const myCar2=new Car("BMW","520d",1980,136,2002);
+const myCar3=new Car("Mercedes-Benz","280 SLC",2746,136,1979);
+
+console.log(myCar1.cv2kw());
+console.log(Car.compareAntiguaty(myCar1,myCar2));
+console.log(Car.maxDisplacement([myCar1,myCar2,myCar3]));
 
 
 /**
